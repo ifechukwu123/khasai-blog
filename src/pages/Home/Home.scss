@@ -3,14 +3,14 @@
 
 .home {
 	background-color: $primary-Beige;
-	padding: 0 $padding;
+	padding: 0 $padding 4rem;
 
 	@include tablet {
-		padding: 0 $tablet-padding;
+		padding: 0 $tablet-padding 4rem;
 	}
 
 	@include desktop {
-		padding: 0 $desktop-padding;
+		padding: 0 $desktop-padding 4rem;
 	}
 
 	.hero {
@@ -31,6 +31,88 @@
 			@include desktop {
 				font-size: 3rem;
 			}
+		}
+	}
+
+	.posts {
+		display: flex;
+		flex-direction: column;
+		gap: 5rem;
+		align-items: center;
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+			gap: 5rem;
+		}
+
+		&__item {
+			display: flex;
+			flex-direction: column;
+			gap: 2.5rem;
+
+			@include tablet {
+				flex-direction: row;
+			}
+		}
+
+		&__image {
+			width: 100%;
+			border: 1px solid $primary-Black;
+
+			@include tablet {
+				flex: 0.5;
+			}
+		}
+
+		&__info {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			@include tablet {
+				flex: 0.5;
+			}
+		}
+
+		&__title {
+			font-size: 1.5rem;
+			font-weight: 400;
+
+			@include tablet {
+				font-size: 2rem;
+			}
+		}
+
+		&__date {
+			text-transform: uppercase;
+			color: rgba($primary-Black, 0.6);
+			font-size: 0.875rem;
+		}
+
+		&__intro {
+			line-height: 165%;
+
+			@include tablet {
+				font-size: 1.125rem;
+			}
+		}
+
+		&__link {
+			display: flex;
+			gap: 0.375rem;
+			font-weight: bold;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+			font-size: 0.875rem;
+		}
+
+		&__button {
+			padding: 0.375rem 0.625rem;
+			border: 1px solid $primary-Black;
+			background-color: $secondary-Blue;
+			font-weight: bold;
+			font-size: 1.125rem;
 		}
 	}
 }
