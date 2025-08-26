@@ -49,7 +49,7 @@ export default function Footer() {
 			</div>
 			<span>
 				Designed by{" "}
-				<a href="ifeonuorah.com" className="contact__link">
+				<a href="ifeonuorah.com" target="_blank" className="contact__link">
 					Ife Onuorah
 				</a>
 				{" <3"}

@@ -4,13 +4,21 @@
 .footer {
 	background-color: $primary-Black;
 	color: $primary-Beige;
-	padding: $padding;
+	padding: 1.5rem $padding;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 2rem;
 	justify-content: space-between;
 	align-items: center;
 	font-size: 0.875rem;
+
+	@include tablet {
+		padding: 1.5rem $tablet-padding;
+	}
+
+	@include desktop {
+		padding: 1.5rem $desktop-padding;
+	}
 
 	.contact {
 		display: flex;
