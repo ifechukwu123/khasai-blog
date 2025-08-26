@@ -1,0 +1,35 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.footer {
+	background-color: $primary-Black;
+	color: $primary-Beige;
+	padding: $padding;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.875rem;
+
+	.contact {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		&__title {
+			text-transform: uppercase;
+		}
+
+		&__list {
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		&__link {
+			text-transform: capitalize;
+			text-decoration: underline;
+			text-underline-offset: 2px;
+		}
+	}
+}
