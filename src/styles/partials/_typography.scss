@@ -1,0 +1,47 @@
+// Sans-serif
+
+@font-face {
+	font-family: "GeneralSans";
+	src: url("../../assets/fonts/General_Sans/GeneralSans-Variable.woff2")
+			format("woff2"),
+		url("../../assets/fonts/General_Sans/GeneralSans-Variable.woff")
+			format("woff"),
+		url("../../assets/fonts/General_Sans/GeneralSans-Variable.ttf")
+			format("truetype");
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Ysabeau_Infant";
+	src: url("../../assets/fonts/Ysabeau_Infant/YsabeauInfant-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: 100 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Ysabeau_Infant-Italic";
+	src: url("../../assets/fonts/Ysabeau_Infant/YsabeauInfant-Italic-VariableFont_wght.ttf")
+		format("truetype");
+	font-weight: 100 900;
+	font-style: italic;
+}
+
+// Serif
+@font-face {
+	font-family: "Literata";
+	src: url("../../assets/fonts/Literata/Literata-VariableFont_opsz\,wght.ttf")
+		format("truetype");
+	font-weight: 200 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Literata-Italic";
+	src: url("../../assets/fonts/Literata/Literata-Italic-VariableFont_opsz\,wght.ttf")
+		format("truetype");
+	font-weight: 200 900;
+	font-style: italic;
+}
