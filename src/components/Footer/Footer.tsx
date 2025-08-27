@@ -28,16 +28,6 @@ export default function Footer() {
 					<li role="listitem">.</li>
 					<li role="listitem">
 						<a
-							href="mailto:khasaimm@gmail.com"
-							target="_blank"
-							className="contact__link"
-						>
-							email
-						</a>
-					</li>
-					<li role="listitem">.</li>
-					<li role="listitem">
-						<a
 							href="https://www.linkedin.com/in/kmakhulo/"
 							target="_blank"
 							className="contact__link"
@@ -49,7 +39,11 @@ export default function Footer() {
 			</div>
 			<span>
 				Designed by{" "}
-				<a href="ifeonuorah.com" target="_blank" className="contact__link">
+				<a
+					href="https://www.ifeonuorah.com"
+					target="_blank"
+					className="contact__link"
+				>
 					Ife Onuorah
 				</a>
 				{" <3"}
