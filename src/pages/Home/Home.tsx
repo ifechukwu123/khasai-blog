@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import LinkArrow from "../../assets/icons/top-right.svg";
 import "./Home.scss";
 
 export default function Home() {
+	const navigate = useNavigate();
 	const posts = [
 		{
 			id: 1,
@@ -57,7 +59,15 @@ export default function Home() {
 			<section className="posts">
 				<ul role="list" className="posts__list">
 					{posts.map((post) => (
-						<li key={post.id} role="listitem" className="posts__item">
+						<li
+							key={post.id}
+							role="listitem"
+							className={
+								post.id % 2 == 0
+									? "posts__item posts__item--reverse"
+									: "posts__item"
+							}
+						>
 							<img
 								src="https://placehold.co/16x9"
 								alt="Picture of something related to the blog"
@@ -76,7 +86,18 @@ export default function Home() {
 						</li>
 					))}
 				</ul>
-				<button className="posts__button">Check out more posts</button>
+				<div className="posts__button-container">
+					<button
+						className="posts__button"
+						onClick={() =>
+							setTimeout(() => {
+								navigate("/blog");
+							}, 500)
+						}
+					>
+						Check out more posts
+					</button>
+				</div>
 			</section>
 		</main>
 	);

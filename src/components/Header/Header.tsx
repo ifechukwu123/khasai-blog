@@ -31,10 +31,14 @@ export default function Header() {
 			<nav className="nav" aria-label="Main Navigation">
 				<ul className="nav__list" role="list">
 					<li className="nav__item" role="listitem">
-						<Link to="/blog">blog</Link>
+						<Link to="/blog" className="nav__link">
+							blog
+						</Link>
 					</li>
 					<li className="nav__item" role="listitem">
-						<Link to="/about">about</Link>
+						<Link to="/about" className="nav__link">
+							about
+						</Link>
 					</li>
 					<li className="nav__item" role="listitem">
 						<button
