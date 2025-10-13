@@ -38,7 +38,7 @@ export default function Footer() {
 				</ul>
 			</div>
 			<span>
-				Designed by{" "}
+				Made by{" "}
 				<a
 					href="https://www.ifeonuorah.com"
 					target="_blank"

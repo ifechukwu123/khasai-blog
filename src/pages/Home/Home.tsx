@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import LinkArrow from "../../assets/icons/top-right.svg";
 import "./Home.scss";
+import { useState } from "react";
 
 export default function Home() {
 	const navigate = useNavigate();
@@ -47,14 +48,89 @@ export default function Home() {
 		},
 	];
 
+	const intros = [
+		{
+			id: 1,
+			title: "Kasai",
+			description: `not my name
+
+as a young school girl, i was told i had a difficult name. the mere act of reading it was a task. teachers contorted their faces, emptiness in their eyes during the first roll call.
+i felt embarrassed and ashamed to correct them after I gave the right pronounciation and they decided what they wanted to hear.
+
+few people in my life still call me Kasai. it signifies an innocent period of my life where i was afraid to take up space.`,
+		},
+		{
+			id: 2,
+			title: "Kasai",
+			description: `a communal name
+
+I accept this pronunciation if you are Ethiopian, or Congolese. I feel so pan-African, so in the fray. `,
+		},
+		{
+			id: 3,
+			title: "Khasayi",
+			description: `a spiritual name.
+
+did you know that when a woman is pregnant with a xx embryo, the ovaries of the fetus with all the eggs it will have over it’s entire life are present?
+
+i was named after my father’s mother’s mother. of significance because culturally it is one a sign of respect to respectable elders and a passing on of spirit. a permanent linkage to the past. a reincarnation.
+
+when i introduce myself in swahili, i add the extra syllable “yi”. `,
+		},
+		{
+			id: 4,
+			title: "Khasai",
+			description: `a communal name
+
+In the South African pronunciation, the h is silent. they recognize the name, there is no hesitation. people who read my name think it is south african and I think that is fucking cool.
+
+I once introduced myself to a Hispanic man and he said “oh! with a “j”… i’ve never felt so seen.
+
+i do tell people that the “k” is silent although it isn’t.`,
+		},
+		{
+			id: 5,
+			title: "Khasai",
+			description: `my name
+
+(kh) is a back fricative sound.
+
+a few definitions that people of varying intimacy have shared with me include “prayerful”. When I first heard this, i immediately knew that it was true.
+
+“Blood” which was an interesting one.
+
+“someone who makes others laugh” which i hope is true
+
+”dove”`,
+		},
+	];
+
+	// to change to different intros
+	const [value, setValue] = useState(4);
+	console.log(value);
+
 	return (
 		<main className="home">
 			<section className="hero">
 				<h1 className="hero__title">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-					minim veniam, quis nostrud exercitation ullamco laboris.
+					{intros.find((intro) => intro.id === value)?.description}
 				</h1>
+				<div className="hero__scale">
+					{intros.map((intro) => (
+						<label key={intro.id} htmlFor={`${intro.id}`}>
+							<input
+								type="radio"
+								id={`${intro.id}`}
+								value={value}
+								checked={intro.id === value}
+								onChange={() => {
+									setValue(intro.id);
+								}}
+							/>
+							{intro.title}
+						</label>
+					))}
+				</div>
 			</section>
 			<section className="posts">
 				<ul role="list" className="posts__list">

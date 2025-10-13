@@ -17,7 +17,7 @@
 	.hero {
 		min-height: calc(100vh - 4.4688rem);
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		padding: 1.5rem 0;
 
 		&__title {
@@ -32,6 +32,11 @@
 			@include desktop {
 				font-size: 3rem;
 			}
+		}
+
+		&__scale {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 
