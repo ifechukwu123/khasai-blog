@@ -51,83 +51,97 @@ export default function Home() {
 	const intros = [
 		{
 			id: 1,
-			title: "Kasai",
-			description: `not my name
-
-as a young school girl, i was told i had a difficult name. the mere act of reading it was a task. teachers contorted their faces, emptiness in their eyes during the first roll call.
-i felt embarrassed and ashamed to correct them after I gave the right pronounciation and they decided what they wanted to hear.
-
-few people in my life still call me Kasai. it signifies an innocent period of my life where i was afraid to take up space.`,
+			name: "Kasai",
+			pronunciation: "ha-sa-yi",
+			title: "not my name",
+			description: [
+				"as a young school girl, i was told i had a difficult name. the mere act of reading it was a task. teachers contorted their faces, emptiness in their eyes during the first roll call. i felt embarrassed and ashamed to correct them after I gave the right pronounciation and they decided what they wanted to hear.",
+				"few people in my life still call me Kasai. it signifies an innocent period of my life where i was afraid to take up space.",
+			],
 		},
 		{
 			id: 2,
-			title: "Kasai",
-			description: `a communal name
-
-I accept this pronunciation if you are Ethiopian, or Congolese. I feel so pan-African, so in the fray. `,
+			name: "Kasai",
+			pronunciation: "ha-sa-yi",
+			title: "a communal name",
+			description: [
+				"I accept this pronunciation if you are Ethiopian, or Congolese. I feel so pan-African, so in the fray.",
+			],
 		},
 		{
 			id: 3,
-			title: "Khasayi",
-			description: `a spiritual name.
-
-did you know that when a woman is pregnant with a xx embryo, the ovaries of the fetus with all the eggs it will have over it’s entire life are present?
-
-i was named after my father’s mother’s mother. of significance because culturally it is one a sign of respect to respectable elders and a passing on of spirit. a permanent linkage to the past. a reincarnation.
-
-when i introduce myself in swahili, i add the extra syllable “yi”. `,
+			name: "Khasayi",
+			pronunciation: "ha-sa-yi",
+			title: "a spiritual name",
+			description: [
+				"did you know that when a woman is pregnant with a xx embryo, the ovaries of the fetus with all the eggs it will have over it’s entire life are present?",
+				"i was named after my father’s mother’s mother. of significance because culturally it is one a sign of respect to respectable elders and a passing on of spirit. a permanent linkage to the past. a reincarnation.",
+				"when i introduce myself in swahili, i add the extra syllable “yi”.",
+			],
 		},
 		{
 			id: 4,
-			title: "Khasai",
-			description: `a communal name
-
-In the South African pronunciation, the h is silent. they recognize the name, there is no hesitation. people who read my name think it is south african and I think that is fucking cool.
-
-I once introduced myself to a Hispanic man and he said “oh! with a “j”… i’ve never felt so seen.
-
-i do tell people that the “k” is silent although it isn’t.`,
+			name: "Khasai",
+			pronunciation: "ha-sa-yi",
+			title: "a communal name",
+			description: [
+				"In the South African pronunciation, the h is silent. they recognize the name, there is no hesitation. people who read my name think it is south african and I think that is fucking cool.",
+				"I once introduced myself to a Hispanic man and he said “oh! with a “j”… i’ve never felt so seen.",
+				"i do tell people that the “k” is silent although it isn’t.",
+			],
 		},
 		{
 			id: 5,
-			title: "Khasai",
-			description: `my name
-
-(kh) is a back fricative sound.
-
-a few definitions that people of varying intimacy have shared with me include “prayerful”. When I first heard this, i immediately knew that it was true.
-
-“Blood” which was an interesting one.
-
-“someone who makes others laugh” which i hope is true
-
-”dove”`,
+			name: "Khasai",
+			pronunciation: "ha-sa-yi",
+			title: "my name",
+			description: [
+				"(kh) is a back fricative sound.",
+				"a few definitions that people of varying intimacy have shared with me include “prayerful”. When I first heard this, i immediately knew that it was true.",
+				"“Blood” which was an interesting one.",
+				"“someone who makes others laugh” which i hope is true",
+				"”dove”",
+			],
 		},
 	];
 
 	// to change to different intros
 	const [value, setValue] = useState(4);
-	console.log(value);
+	const intro = intros.find((intro) => intro.id === value);
 
 	return (
 		<main className="home">
 			<section className="hero">
-				<h1 className="hero__title">
-					{intros.find((intro) => intro.id === value)?.description}
+				<h1 className="intro">
+					<div className="intro__header">
+						<span className="intro__title">{intro?.title}</span>{" "}
+						<span>[{intro?.pronunciation}]</span>
+					</div>
+					<p className="intro__description">
+						{intro?.description.map((sentence) => (
+							<span>{sentence}</span>
+						))}
+					</p>
 				</h1>
-				<div className="hero__scale">
+				<div className="hero__select">
 					{intros.map((intro) => (
-						<label key={intro.id} htmlFor={`${intro.id}`}>
+						<label
+							key={intro.id}
+							htmlFor={`${intro.id}`}
+							className="hero__label"
+						>
 							<input
 								type="radio"
 								id={`${intro.id}`}
-								value={value}
+								name="intro"
+								value={intro.name}
 								checked={intro.id === value}
 								onChange={() => {
 									setValue(intro.id);
 								}}
+								className="hero__option"
 							/>
-							{intro.title}
+							{intro.name}
 						</label>
 					))}
 				</div>

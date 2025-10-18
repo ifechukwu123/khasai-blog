@@ -8,7 +8,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	text-transform: uppercase;
 
 	@include tablet {
@@ -30,8 +30,8 @@
 	}
 
 	&__icon {
-		width: 1.25rem;
-		height: 1.25rem;
+		width: 1.125rem;
+		height: 1.125rem;
 	}
 
 	.nav {
@@ -43,7 +43,7 @@
 
 		&__list {
 			display: flex;
-			align-items: center;
+			align-items: baseline;
 			gap: 2rem;
 		}
 
