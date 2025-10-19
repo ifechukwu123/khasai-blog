@@ -106,7 +106,7 @@ export default function Home() {
 	];
 
 	// to change to different intros
-	const [value, setValue] = useState(4);
+	const [value, setValue] = useState(3);
 	const intro = intros.find((intro) => intro.id === value);
 
 	return (
