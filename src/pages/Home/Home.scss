@@ -15,7 +15,7 @@
 	}
 
 	.hero {
-		height: calc(100vh - 4.3438rem);
+		height: calc(100dvh - 4.3438rem);
 		display: flex;
 		flex-direction: column;
 		padding: 2rem 0;
@@ -27,7 +27,7 @@
 		}
 
 		@include desktop {
-			height: calc(100vh - 5.3438rem);
+			height: calc(100dvh - 5.3438rem);
 			padding: 4rem 0;
 			gap: 4rem;
 		}
