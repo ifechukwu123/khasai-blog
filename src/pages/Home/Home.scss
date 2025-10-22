@@ -15,52 +15,39 @@
 	}
 
 	.hero {
-		height: calc(100dvh - 4.3438rem);
+		height: 100dvh;
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 0;
+		padding: 6.1563rem 0 2rem; //account for fixed header height
 		gap: 2rem;
+		font-size: 0.875rem;
 
 		@include tablet {
-			padding: 3rem 0;
+			padding: 7.1563rem 0 3rem; //account for fixed header height
 			gap: 3rem;
+			font-size: 1rem;
 		}
 
 		@include desktop {
-			height: calc(100dvh - 5.3438rem);
-			padding: 4rem 0;
+			padding: 9.1563rem 0 4rem; //account for fixed header height
 			gap: 4rem;
+			font-size: 1.125rem;
 		}
 
 		.intro {
-			font-size: 1rem;
 			font-weight: 300;
 			line-height: 200%;
 			flex-grow: 1;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-
-			@include tablet {
-				font-size: 1.25rem;
-			}
-
-			@include desktop {
-				font-size: 1.5rem;
-			}
+			width: 80%;
+			margin: 0 auto;
+			font-size: inherit;
 
 			&__header {
 				font-family: "GeneralSans";
-				font-size: 0.875rem;
 				font-weight: 400;
-
-				@include tablet {
-					font-size: 1rem;
-				}
-
-				@include desktop {
-					font-size: 1.125rem;
-				}
 			}
 
 			&__title {
@@ -73,23 +60,14 @@
 				gap: 1rem;
 
 				@include tablet {
-					gap: 1.5rem;
+					gap: 1.125rem;
 				}
 			}
 		}
 
 		&__select {
-			font-size: 0.875rem;
 			display: flex;
 			justify-content: space-between;
-
-			@include tablet {
-				font-size: 1rem;
-			}
-
-			@include desktop {
-				font-size: 1.125rem;
-			}
 		}
 
 		&__label {
@@ -121,6 +99,15 @@
 		flex-direction: column;
 		gap: 4rem;
 		align-items: center;
+		padding-top: 5rem;
+
+		@include tablet {
+			padding-top: 7rem;
+		}
+
+		@include desktop {
+			padding-top: 9rem;
+		}
 
 		&__list {
 			display: flex;
